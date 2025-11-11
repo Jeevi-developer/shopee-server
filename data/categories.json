@@ -1,0 +1,482 @@
+[
+  {
+    "_id": "cat_1",
+    "name": "Electronics",
+    "slug": "electronics",
+    "createdAt": "2025-11-03T10:35:20.555523",
+    "children": [
+      {
+        "name": "Mobiles",
+        "slug": "mobiles",
+        "products": [
+          "iPhone 15",
+          "Samsung Galaxy S23",
+          "OnePlus 12",
+          "Xiaomi Redmi Note 13",
+          "Google Pixel 8",
+          "Realme Narzo 70",
+          "Vivo V30"
+        ]
+      },
+      {
+        "name": "Laptops",
+        "slug": "laptops",
+        "products": [
+          "MacBook Air M2",
+          "Dell Inspiron 15",
+          "HP Pavilion",
+          "Lenovo IdeaPad",
+          "Asus TUF Gaming",
+          "Acer Swift 3",
+          "MSI GF63"
+        ]
+      },
+      {
+        "name": "Audio",
+        "slug": "audio",
+        "products": [
+          "Bose Headphones",
+          "Sony WH-1000XM5",
+          "Boat Airdopes",
+          "JBL Flip 6",
+          "Edifier Speakers"
+        ]
+      },
+      {
+        "name": "Cameras",
+        "slug": "cameras",
+        "products": [
+          "Canon EOS 1500D",
+          "Nikon D5600",
+          "Sony Alpha A7III",
+          "GoPro Hero11"
+        ]
+      },
+      {
+        "name": "Wearables",
+        "slug": "wearables",
+        "products": [
+          "Apple Watch Series 9",
+          "Samsung Galaxy Watch6",
+          "Noise ColorFit",
+          "Fitbit Charge 5"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "cat_2",
+    "name": "TVs & Appliances",
+    "slug": "tvs-and-appliances",
+    "createdAt": "2025-11-03T10:35:20.555533",
+    "children": [
+      {
+        "name": "Televisions",
+        "slug": "televisions",
+        "products": [
+          "Samsung 55\" QLED",
+          "LG OLED 65\"",
+          "Mi 43\" Smart TV",
+          "Sony Bravia 50\""
+        ]
+      },
+      {
+        "name": "Refrigerators",
+        "slug": "refrigerators",
+        "products": [
+          "LG Double Door",
+          "Samsung Frost Free",
+          "Whirlpool 3 Star",
+          "Godrej 4 Star"
+        ]
+      },
+      {
+        "name": "Washing Machines",
+        "slug": "washing-machines",
+        "products": [
+          "IFB Front Load",
+          "Bosch Front Load",
+          "Samsung Top Load",
+          "LG Front Load"
+        ]
+      },
+      {
+        "name": "Air Conditioners",
+        "slug": "air-conditioners",
+        "products": [
+          "Voltas Split AC",
+          "LG Dual Inverter",
+          "Daikin Inverter",
+          "Samsung WindFree"
+        ]
+      },
+      {
+        "name": "Kitchen Appliances",
+        "slug": "kitchen-appliances",
+        "products": [
+          "Panasonic Microwave",
+          "Philips Mixer Grinder",
+          "Prestige Induction",
+          "Bajaj Electric Kettle"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "cat_3",
+    "name": "Men",
+    "slug": "men",
+    "createdAt": "2025-11-03T10:35:20.555536",
+    "children": [
+      {
+        "name": "Topwear",
+        "slug": "topwear",
+        "products": [
+          "Men T-Shirts",
+          "Men Shirts",
+          "Polos",
+          "Sweatshirts",
+          "Jackets"
+        ]
+      },
+      {
+        "name": "Bottomwear",
+        "slug": "bottomwear",
+        "products": [
+          "Jeans",
+          "Chinos",
+          "Shorts",
+          "Trackpants"
+        ]
+      },
+      {
+        "name": "Footwear",
+        "slug": "footwear",
+        "products": [
+          "Casual Shoes",
+          "Sports Shoes",
+          "Formal Shoes",
+          "Sandals"
+        ]
+      },
+      {
+        "name": "Accessories",
+        "slug": "accessories",
+        "products": [
+          "Watches",
+          "Belts",
+          "Wallets",
+          "Sunglasses"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "cat_4",
+    "name": "Women",
+    "slug": "women",
+    "createdAt": "2025-11-03T10:35:20.555538",
+    "children": [
+      {
+        "name": "Ethnic Wear",
+        "slug": "ethnic-wear",
+        "products": [
+          "Sarees",
+          "Kurtis",
+          "Lehengas",
+          "Salwar Suits"
+        ]
+      },
+      {
+        "name": "Western Wear",
+        "slug": "western-wear",
+        "products": [
+          "Dresses",
+          "Tops",
+          "Jeans",
+          "Skirts"
+        ]
+      },
+      {
+        "name": "Footwear",
+        "slug": "footwear",
+        "products": [
+          "Heels",
+          "Flats",
+          "Sandals",
+          "Sports Shoes"
+        ]
+      },
+      {
+        "name": "Bags",
+        "slug": "bags",
+        "products": [
+          "Handbags",
+          "Backpacks",
+          "Clutches",
+          "Wallets"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "cat_5",
+    "name": "Home & Furniture",
+    "slug": "home-and-furniture",
+    "createdAt": "2025-11-03T10:35:20.555540",
+    "children": [
+      {
+        "name": "Furniture",
+        "slug": "furniture",
+        "products": [
+          "Sofas",
+          "Beds",
+          "Dining Tables",
+          "Wardrobes",
+          "Study Tables"
+        ]
+      },
+      {
+        "name": "Home Decor",
+        "slug": "home-decor",
+        "products": [
+          "Wall Art",
+          "Clocks",
+          "Showpieces",
+          "Rugs",
+          "Curtains"
+        ]
+      },
+      {
+        "name": "Kitchen & Dining",
+        "slug": "kitchen-and-dining",
+        "products": [
+          "Cookware Set",
+          "Dinner Set",
+          "Cutlery",
+          "Storage Containers"
+        ]
+      },
+      {
+        "name": "Bedding",
+        "slug": "bedding",
+        "products": [
+          "Mattresses",
+          "Bedsheets",
+          "Pillows",
+          "Blankets"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "cat_6",
+    "name": "Beauty & Personal Care",
+    "slug": "beauty-and-personal-care",
+    "createdAt": "2025-11-03T10:35:20.555543",
+    "children": [
+      {
+        "name": "Makeup",
+        "slug": "makeup",
+        "products": [
+          "Lipstick",
+          "Foundation",
+          "Mascara",
+          "Compact Powder",
+          "Eyeliner"
+        ]
+      },
+      {
+        "name": "Skincare",
+        "slug": "skincare",
+        "products": [
+          "Facewash",
+          "Moisturizer",
+          "Serum",
+          "Sunscreen"
+        ]
+      },
+      {
+        "name": "Haircare",
+        "slug": "haircare",
+        "products": [
+          "Shampoo",
+          "Conditioner",
+          "Hair Oil",
+          "Serum"
+        ]
+      },
+      {
+        "name": "Fragrances",
+        "slug": "fragrances",
+        "products": [
+          "Perfume",
+          "Deodorant",
+          "Body Mist"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "cat_7",
+    "name": "Grocery",
+    "slug": "grocery",
+    "createdAt": "2025-11-03T10:35:20.555546",
+    "children": [
+      {
+        "name": "Staples",
+        "slug": "staples",
+        "products": [
+          "Rice",
+          "Wheat Flour",
+          "Cooking Oil",
+          "Pulses",
+          "Sugar"
+        ]
+      },
+      {
+        "name": "Beverages",
+        "slug": "beverages",
+        "products": [
+          "Tea",
+          "Coffee",
+          "Juice",
+          "Soft Drinks"
+        ]
+      },
+      {
+        "name": "Snacks",
+        "slug": "snacks",
+        "products": [
+          "Biscuits",
+          "Chips",
+          "Namkeen",
+          "Cookies"
+        ]
+      },
+      {
+        "name": "Personal Care",
+        "slug": "personal-care",
+        "products": [
+          "Soap",
+          "Toothpaste",
+          "Shampoo",
+          "Sanitary Pads"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "cat_8",
+    "name": "Sports & Outdoor",
+    "slug": "sports-and-outdoor",
+    "createdAt": "2025-11-03T10:35:20.555552",
+    "children": [
+      {
+        "name": "Fitness",
+        "slug": "fitness",
+        "products": [
+          "Treadmill",
+          "Yoga Mat",
+          "Dumbbells",
+          "Resistance Bands"
+        ]
+      },
+      {
+        "name": "Outdoor",
+        "slug": "outdoor",
+        "products": [
+          "Camping Tent",
+          "Backpacks",
+          "Sleeping Bag",
+          "Binoculars"
+        ]
+      },
+      {
+        "name": "Sports",
+        "slug": "sports",
+        "products": [
+          "Cricket Bats",
+          "Football",
+          "Badminton Rackets",
+          "Table Tennis Set"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "cat_9",
+    "name": "Books & Stationery",
+    "slug": "books-and-stationery",
+    "createdAt": "2025-11-03T10:35:20.555573",
+    "children": [
+      {
+        "name": "Books",
+        "slug": "books",
+        "products": [
+          "Fiction",
+          "Non-Fiction",
+          "Academic Textbooks",
+          "Children Books",
+          "Comics"
+        ]
+      },
+      {
+        "name": "Stationery",
+        "slug": "stationery",
+        "products": [
+          "Notebooks",
+          "Pens",
+          "Planners",
+          "Art Supplies"
+        ]
+      },
+      {
+        "name": "Educational",
+        "slug": "educational",
+        "products": [
+          "Reference Books",
+          "IIT-JEE Prep",
+          "NEET Prep"
+        ]
+      }
+    ]
+  },
+  {
+    "_id": "cat_10",
+    "name": "Baby & Kids",
+    "slug": "baby-and-kids",
+    "createdAt": "2025-11-03T10:35:20.555577",
+    "children": [
+      {
+        "name": "Baby Care",
+        "slug": "baby-care",
+        "products": [
+          "Diapers",
+          "Baby Wipes",
+          "Baby Oil",
+          "Feeding Bottles"
+        ]
+      },
+      {
+        "name": "Kids Fashion",
+        "slug": "kids-fashion",
+        "products": [
+          "Baby Dresses",
+          "Kids T-Shirts",
+          "School Uniforms"
+        ]
+      },
+      {
+        "name": "Toys",
+        "slug": "toys",
+        "products": [
+          "Educational Toys",
+          "Soft Toys",
+          "Action Figures",
+          "Puzzles"
+        ]
+      }
+    ]
+  }
+]
