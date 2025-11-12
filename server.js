@@ -42,10 +42,11 @@ app.use("/api/products", productRoutes);
 app.use("/api/admin", adminRoutes);
 
 // ✅ MongoDB Connection
-mongoose
-  .connect(process.env.MONGO_URI || "mongodb://localhost:27017/shopee")
-  .then(() => console.log("✅ MongoDB connected successfully"))
-  .catch((err) => console.error("❌ MongoDB connection error:", err));
+mongoose.connect(process.env.MONGO_URI, {
+  dbName: "shopee", // ✅ This forces Mongoose to use this DB
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
 
 // ✅ Routes
 app.get("/", (req, res) => res.send("🚀 Server is running successfully!"));
