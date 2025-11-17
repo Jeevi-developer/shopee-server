@@ -21,7 +21,8 @@
     "jsonwebtoken": "^9.0.2",
     "jwt-decode": "^4.0.0",
     "mongoose": "^8.19.2",
-    "multer": "^2.0.2"
+    "multer": "^2.0.2",
+    "twilio": "^5.10.5"
   },
   "devDependencies": {
     "nodemon": "^3.1.10"

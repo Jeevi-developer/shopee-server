@@ -9,6 +9,7 @@ import sellerRoutes from "./routes/sellerRoutes.js";
 import authRoutes from "./routes/authRoutes.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
+import otpRoutes from "./routes/otpRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
 
 dotenv.config();
@@ -37,6 +38,8 @@ app.use("/api/seller", sellerRoutes);
 app.use("/api/auth", authRoutes); // ✅ all auth routes now under /api
 app.use("/api/categories", categoryRoutes);
 app.use("/api/products", productRoutes);
+// OTP Routes
+app.use("/api", otpRoutes);
 
 // Routes
 app.use("/api/admin", adminRoutes);
