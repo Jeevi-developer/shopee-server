@@ -34,4 +34,4 @@ adminSchema.pre("save", async function (next) {
   next();
 });
 
-export default mongoose.model("Admin", adminSchema);
+export default mongoose.model("Admins", adminSchema);

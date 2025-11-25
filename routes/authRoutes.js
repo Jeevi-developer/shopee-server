@@ -206,12 +206,12 @@ router.post("/verify-otp", async (req, res) => {
 
     // Create if not exists
     if (!customer) {
-      const hashedPassword = await bcrypt.hash(password, 10);
+      // const hashedPassword = await bcrypt.hash(password, 10);
 
       customer = new Customer({
         fullName: name,
         email,
-        password: hashedPassword,
+        password,
         referralCode,
         mobile: normalizedMobile,
         address,

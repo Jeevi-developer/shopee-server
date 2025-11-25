@@ -1,17 +1,41 @@
 import mongoose from "mongoose";
 
-const productSchema = new mongoose.Schema(
+const ProductSchema = new mongoose.Schema(
   {
-    name: { type: String, required: true },
-    description: { type: String },
-    price: { type: Number, required: true },
-    oldPrice: { type: Number },
-    rating: { type: Number, default: 0 },
-    images: [{ type: String, required: true }],
-    isFeatured: { type: Boolean, default: false },
-    sellerId: { type: mongoose.Schema.Types.ObjectId, ref: "User" }
+    seller: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Seller",
+      required: true,
+    },
+    title: String,
+    description: String,
+    price: Number,
+    stock: Number,
+    sku: String,
+    categories: [String],
+    images: [String],
+
+    // approval system fields
+    approvalStatus: {
+      type: String,
+      enum: ["Pending", "Approved", "Rejected"],
+      default: "Pending",
+    },
+    approvedAt: Date,
+    approvalReason: String,
+    isPublic: { type: Boolean, default: false },
+
+    // optional cached seller info for quick search (redundant)
+    sellerInfo: {
+      businessName: String,
+      email: String,
+      phone: String,
+    },
+
+    createdAt: Date,
+    updatedAt: Date,
   },
   { timestamps: true }
 );
 
-export default mongoose.model("Product", productSchema);
+export default mongoose.model("Product", ProductSchema);

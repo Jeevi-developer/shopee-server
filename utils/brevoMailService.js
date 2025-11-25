@@ -6,12 +6,22 @@ dotenv.config();
 export const sendOTPEmail = async (email, otp) => {
   try {
     if (!process.env.BREVO_API_KEY || !process.env.BREVO_SENDER_EMAIL) {
-      throw new Error("Missing BREVO_API_KEY or BREVO_SENDER_EMAIL in environment variables");
+      throw new Error(
+        "Missing BREVO_API_KEY or BREVO_SENDER_EMAIL in environment variables"
+      );
     }
 
     console.log("📨 Sending OTP email...");
-    console.log("🔑 Brevo API key (first 10):", process.env.BREVO_API_KEY.slice(0, 10));
-    console.log("📧 Sending from:", process.env.BREVO_SENDER_EMAIL, "→ To:", email);
+    console.log(
+      "🔑 Brevo API key (first 10):",
+      process.env.BREVO_API_KEY.slice(0, 10)
+    );
+    console.log(
+      "📧 Sending from:",
+      process.env.BREVO_SENDER_EMAIL,
+      "→ To:",
+      email
+    );
 
     const payload = {
       sender: {
@@ -47,6 +57,50 @@ export const sendOTPEmail = async (email, otp) => {
   } catch (error) {
     console.error("❌ Brevo API Error:");
     console.error(error.response?.data || error.message);
-    throw new Error(error.response?.data?.message || "Failed to send email via Brevo");
+    throw new Error(
+      error.response?.data?.message || "Failed to send email via Brevo"
+    );
+  }
+};
+
+export const sendMail = async (mailData) => {
+  try {
+    if (!process.env.BREVO_API_KEY) {
+      throw new Error("Missing BREVO_API_KEY in environment variables");
+    }
+
+    // mailData should include: sender, to, subject, htmlContent
+    const payload = {
+      sender: mailData.sender, // { name, email }
+      to: mailData.to, // [{ name, email }]
+      subject: mailData.subject,
+      htmlContent: mailData.htmlContent,
+    };
+
+    const response = await axios.post(
+      "https://api.brevo.com/v3/smtp/email",
+      payload,
+      {
+        headers: {
+          accept: "application/json",
+          "content-type": "application/json",
+          "api-key": process.env.BREVO_API_KEY,
+        },
+      }
+    );
+
+    console.log(
+      "✅ Email sent successfully via Brevo:",
+      response.data.messageId || response.data
+    );
+    return response.data;
+  } catch (error) {
+    console.error(
+      "❌ Error sending email via Brevo:",
+      error.response?.data || error.message
+    );
+    throw new Error(
+      error.response?.data?.message || "Failed to send email via Brevo"
+    );
   }
 };

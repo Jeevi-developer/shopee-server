@@ -11,8 +11,16 @@ import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
 import otpRoutes from "./routes/otpRoutes.js";
 import adminRoutes from "./routes/adminRoutes.js";
+// if you have central adminRoutes, import and use there, otherwise:
+import adminSellerRoutes from "./routes/adminSellerRoutes.js";
+import contactRoutes from "./routes/contactRoutes.js";
 
 dotenv.config();
+
+// If NODE_ENV=production → load .env.production
+if (process.env.NODE_ENV === "production") {
+  dotenv.config({ path: ".env.production" });
+}
 
 // ✅ Fix __dirname issue for ES Modules
 const __filename = fileURLToPath(import.meta.url);
@@ -44,12 +52,17 @@ app.use("/api", otpRoutes);
 // Routes
 app.use("/api/admin", adminRoutes);
 
+app.use("/api/admin/sellers", adminSellerRoutes);
+app.use("/api/contact", contactRoutes);
+
 // ✅ MongoDB Connection
 mongoose.connect(process.env.MONGO_URI, {
   dbName: "shopee", // ✅ This forces Mongoose to use this DB
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
+console.log("Connected to:", process.env.MONGO_URI);
 
 // ✅ Routes
 app.get("/", (req, res) => res.send("🚀 Server is running successfully!"));

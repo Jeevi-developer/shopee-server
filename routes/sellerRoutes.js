@@ -1,3 +1,4 @@
+// routes/sellerRoutes.js
 import express from "express";
 import multer from "multer";
 import path from "path";
@@ -5,64 +6,46 @@ import {
   registerSeller,
   loginSeller,
   requestSellerPasswordReset,
-  resetSellerPassword,
+  resetSellerPassword
 } from "../controllers/sellerController.js";
 
 const router = express.Router();
 
-
-// ✅ Storage setup
+// --- multer storage ---
 const storage = multer.diskStorage({
   destination: (req, file, cb) => {
     cb(null, path.join(process.cwd(), "uploads"));
   },
   filename: (req, file, cb) => {
     const uniqueSuffix = Date.now() + "-" + Math.round(Math.random() * 1e9);
-    cb(
-      null,
-      `${file.fieldname}-${uniqueSuffix}${path.extname(file.originalname)}`
-    );
-  },
+    cb(null, `${file.fieldname}-${uniqueSuffix}${path.extname(file.originalname)}`);
+  }
 });
 
-// ✅ File Filter (only accept specific formats)
+// allowed file types
+const allowedExt = [".jpg", ".jpeg", ".png", ".pdf", ".doc", ".docx"];
 const fileFilter = (req, file, cb) => {
-  const allowedExt = [".jpg", ".jpeg", ".png", ".pdf", ".doc", ".docx"];
   const ext = path.extname(file.originalname).toLowerCase();
-
-  console.log(`🧐 Checking file: ${file.originalname} (${file.mimetype})`);
-
-  if (allowedExt.includes(ext)) {
-    console.log(`✅ Accepted file: ${file.originalname}`);
-    cb(null, true);
-  } else {
-    console.warn(`❌ Rejected file: ${file.originalname} (ext: ${ext})`);
-    cb(new Error("Invalid file type! Only JPG, PNG, PDF, DOC, DOCX allowed."));
-  }
+  if (allowedExt.includes(ext)) cb(null, true);
+  else cb(new Error("Invalid file type! Only JPG, PNG, PDF, DOC, DOCX allowed."));
 };
 
-// ✅ Multer setup – accepts any field name (safe with filter)
+// increase per-file limit here (10MB)
 const uploadAny = multer({
   storage,
-  limits: { fileSize: 5 * 1024 * 1024 }, // Max 5MB per file
-  fileFilter,
+  limits: { fileSize: 10 * 1024 * 1024 },
+  fileFilter
 }).any();
 
-// ✅ Register Seller Route
-router.post(
-  "/register",
-  uploadAny,
-  (req, res, next) => {
-    console.log("📸 Files received in upload:", req.files);
-    console.log("🧾 Body fields received:", req.body);
-    next();
-  },
-  registerSeller
-);
+// Register
+router.post("/register", uploadAny, (req, res, next) => {
+  console.log("Files:", req.files?.map(f => f.fieldname) || []);
+  console.log("Body keys:", Object.keys(req.body));
+  next();
+}, registerSeller);
 
+// Login & password reset
 router.post("/login", loginSeller);
-
-// new forgot/reset routes
 router.post("/forgot-password", requestSellerPasswordReset);
 router.post("/reset-password/:token", resetSellerPassword);
 

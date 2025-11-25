@@ -1,5 +1,6 @@
 import User from "../models/User.js";
 import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
 
 export const registerUser = async (req, res) => {
   try {
@@ -10,10 +11,13 @@ export const registerUser = async (req, res) => {
       return res.status(400).json({ message: "User already exists" });
     }
 
+    // 🔥 Hash password before saving
+    const hashedPassword = await bcrypt.hash(password, 10);
+
     const newUser = new User({
       fullName,
       emailOrMobile,
-      password,
+      password: hashedPassword, // 👈 saved hashed
       referralCode,
     });
 
@@ -27,17 +31,28 @@ export const registerUser = async (req, res) => {
 export const loginUser = async (req, res) => {
   try {
     const { emailOrMobile, password } = req.body;
-    const user = await User.findOne({ emailOrMobile });
 
+    const user = await User.findOne({ emailOrMobile });
     if (!user) return res.status(400).json({ message: "User not found" });
 
     const isMatch = await bcrypt.compare(password, user.password);
-    if (!isMatch)
-      return res.status(400).json({ message: "Invalid password" });
+    if (!isMatch) return res.status(400).json({ message: "Invalid password" });
+
+    // 🔥 Generate JWT
+    const token = jwt.sign(
+      { id: user._id, emailOrMobile: user.emailOrMobile },
+      process.env.JWT_SECRET || "SECRET_KEY",
+      { expiresIn: "7d" }
+    );
 
     res.status(200).json({
       message: "Login successful",
-      user: { fullName: user.fullName, emailOrMobile: user.emailOrMobile },
+      token,
+      user: {
+        id: user._id,
+        fullName: user.fullName,
+        emailOrMobile: user.emailOrMobile,
+      },
     });
   } catch (err) {
     res.status(500).json({ message: err.message });
