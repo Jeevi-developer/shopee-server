@@ -37,6 +37,8 @@ const SellerSchema = new mongoose.Schema(
     phone: String,
     password: String,
     dateOfBirth: String,
+    referralCode: { type: String, unique: true }, // seller’s own referral code
+    referredBy: { type: String, default: "" }, // code used while registering
 
     businessName: String,
     businessType: String,

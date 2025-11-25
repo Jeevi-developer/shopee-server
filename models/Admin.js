@@ -22,6 +22,12 @@ const adminSchema = new mongoose.Schema(
       type: String,
       default: "admin",
     },
+    // 🔹 Add this
+    referralCode: {
+      type: String,
+      default: "ADMIN-REF-1001", // you can generate a random code too
+      unique: true,
+    },
   },
   { timestamps: true }
 );

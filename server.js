@@ -5,7 +5,7 @@ import dotenv from "dotenv";
 import path from "path";
 import fs from "fs";
 import { fileURLToPath } from "url";
-import sellerRoutes from "./routes/sellerRoutes.js";
+import sellerRoutes from "./routes/sellers.js";
 import authRoutes from "./routes/authRoutes.js";
 import categoryRoutes from "./routes/categoryRoutes.js";
 import productRoutes from "./routes/productRoutes.js";
