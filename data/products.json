@@ -1,0 +1,53 @@
+[{
+  "_id": {
+    "$oid": "690b22ed9b3f1194a99353f1"
+  },
+  "name": "CDEX",
+  "price": 100,
+  "oldPrice": 120,
+  "rating": 4.8,
+  "images": [
+    "http://coindexin.in/images/cdexcoin.png"
+  ],
+  "isFeatured": true
+},
+{
+  "_id": {
+    "$oid": "690b22ed9b3f1194a99353f2"
+  },
+  "name": "Earbuds pro",
+  "price": 4599,
+  "oldPrice": 8999,
+  "rating": 4.7,
+  "images": [
+    "http://coindexin.in/images/earbuds.jpg"
+  ],
+  "isFeatured": true
+},
+{
+  "_id": {
+    "$oid": "690b22ed9b3f1194a99353f3"
+  },
+  "name": "SHOPEE",
+  "price": 150,
+  "oldPrice": 200,
+  "rating": 4.6,
+  "images": [
+    "http://shopee-server2.onrender.com/images/shopee.png"
+  ],
+
+  "isFeatured": true
+},
+{
+  "_id": {
+    "$oid": "690b22ed9b3f1194a99353f4"
+  },
+  "name": "Laptops",
+  "price": 100,
+  "oldPrice": 120,
+  "rating": 4.9,
+  "images": [
+    "http://coindexin.in/images/laptop.jpeg"
+  ],
+  "isFeatured": true
+}]
